@@ -1,0 +1,260 @@
+\chapter{Wstęp}
+
+% ------------------------------------------------------------------------------
+\section{Motywacja do powstania tego skryptu}
+
+Inspiracją do powstania tego skryptu były doświadczenia związane ze zdolnymi
+studentami, którzy potrzebowali w krótkim czasie uzyskać pewne podstawowe
+umiejętności programowania w języku \texttt{C++}. Studenci ci najczęściej
+chcieli jak najszybciej zacząć brać aktywny udział w spotkaniach Sekcji
+Algorytmicznej Koła Informatycznego Niepokoju ,,KINo'', w zajęciach przedmiotów
+z serii ,,Wybrane Zagadnienia Algorytmiki i Programowania'' (WZAiP) lub w zawodach
+w~programowaniu zespołowym. Na szczególne wyróżnienie jako inspiracja do nauki
+technik programowania o których traktuje ten skrypt zasługują coroczne
+Mistrzostwa Wielkopolski w Programowaniu Zespołowym -- które są stacjonarne,
+otwarte i przeprowadzane są na tak dużą skalę, że udział w nich może wziąć
+praktycznie każdy zainteresowany takim doświadczeniem.
+
+Styl programowania, o jakim traktuje ten skrypt jest związany z tradycjami
+zawodów w stylu ACM-ICPC (ang. \emph{Association for Computing Machinery --
+International Collegiate Programming Contest}). Dotyczy to wspomnianych
+Mistrzostw Wielkopolski w Programowaniu Zespołowym oraz Algorytmicznych
+Mistrzostw Polski w Programowaniu Zespołowym -- które z kolei są najbardziej
+prestiżowym wydarzeniem tego typu w Polsce i stanowią lokalne eliminacje
+do mistrzostw świata ACM-ICPC. Zadania z takich mistrzostw stanowią pewne
+abstrakcyjne problemy, które należy rozwiązać poprzez dostarczenie kodu
+źródłowego programu, który dla dowolnych danych wyznacza prawidłową odpowiedź,
+przy zachowaniu ograniczeń czasowych oraz pamięciowych. Z pewnych praktycznych
+(ale także tradycyjnych) przyczyn preferowany w tym zastosowaniu jest język
+\texttt{C++} (\ref{sec:whycpp}). W istocie wykorzystywany jest jednak tylko
+pewien podzbiór języka -- kody źródłowe rozwiązań mają charakter jednorazowy,
+unikalny dla danego rozwiązania i tradycyjnie zapisywane są w całości
+w pojedynczym pliku (\ref{subsec:whatdoweneed}). Takie wymagania mogą się wydać
+egzotyczne nawet studentom informatyki, którzy zaliczyli przedmioty przecinające
+się zakresem materiału z niniejszym skryptem (,,Algorytmy i Struktury Danych'',
+,,Podstawy Programowania'' i ,,Programowanie Obiektowe'') -- dlatego
+zawarty tu materiał zapewne będzie zawierał wiele nowych informacji także dla
+większości z~nich.
+
+Działalność dydaktyczna Sekcji Algorytmicznej często zawierała w sobie
+wyjaśnianie pewnych podstaw podczas samych spotkań lub w ramach merytorycznych
+paneli dyskusyjnych. Proponowane dotychczas źródła (\ref{sec:othersources}) nie
+były jednak dostosowane do potrzeb uczestników idealnie -- rozwijało to w nich
+bardzo cenną zdolność do samodzielnego wyszukiwania źródeł i oceny ich
+przydatności, ale niestety także spowalniało sam proces kształtowania
+podstawowych umiejętności programistycznych. Studenci Sekcji Algorytmicznej
+wymieniają się często zestawem napisanych bardzo kolokwialnym językiem
+,,czytanek'' proponowanych nowym uczestnikom. Niniejszy skrypt ma docelowo mieć
+jednak nad dawnymi materiałami pewne zalety -- celem jest uzupełnienie luk
+i sporządzenie materiału bardziej reprezentatywnego (w przeciwieństwie do
+czytanek, które można określić jako hermetyczne i~nie mające racji bytu poza
+kontekstem relacji towarzyskich Sekcji Algorytmicznej). Niniejszy skrypt ma
+zatem być przydatny do celów promocji WZAiPów i~Sekcji kierowanej do nowych,
+nie wdrożonych jeszcze w naszą barwną społeczność studentów.
+
+W przypadku Wybranych Zagadnień Algorytmiki i Programowania problem tradycyjnie
+nie był aż tak istotny, gdyż do udziału w przedmiocie zapraszani byli tylko
+studenci otrzymujący odpowiednio dobry wynik podczas obowiązkowego testu
+kompetencyjnego (wyjątki od tej reguły wymagały znacznego zaangażowania
+i~wkładu pracy związanego z programowaniem) -- zapewniało to, że studenci
+biorący udział w przedmiocie znaczną część podstaw opanowali w ramach pracy
+samodzielnej. Drobne braki w wiedzy bez problemu uzupełniane były podczas zajęć
+lub indywidualnych konsultacji. Często pozwalało to studentom, którzy uzyskali
+w~ramach testu kompetencyjnego wynik na granicy przyjęcia na przedmiot dorównać
+reszcie grupy i korzystać z uczestnictwa w przedmiocie w pełni.
+
+Dodatkowe materiały często były potrzebne studentom matematyki, którzy chcieli
+brać udział w wymienionych aktywnościach o charakterze programistycznym. Znaczna
+część materiału WZAiPów (algebra, kombinatoryka i probabilistyka, geometria
+obliczeniowa, teoria grafów, optymalizacja) jest łatwiejsza do zrozumienia dla
+studentów kierunku matematyka -- często sprawia to, że po pewnym czasie
+osiągnięcia studentów matematyki przewyższają średnią grupy z danego roku.
+Opanowanie kwestii technicznych często sprawia jednak studentom matematyki
+dodatkową trudność i wymaga od nich dodatkowego nakładu pracy w początkowych
+tygodniach lub miesiącach WZAiPów. 
+
+
+% ------------------------------------------------------------------------------
+\section{Inne materiały}\label{sec:othersources}
+
+\subsection{Tutoriale}
+
+Próby sporządzenia zwięzłego wprowadzenia do języka \texttt{C++} można spotkać
+w~wielu miejscach, ale ich jakość pozostawia wiele do życzenia. Bardzo ambitną,
+lecz wiecznie nieukończoną próbą spisania takiego wprowadzenia jest
+\mycite{wikibooks-cppprogramming}. Wprowadzeniem jeszcze bardziej zwięzłym,
+a jednocześnie kompletnym jest \mycite{cpluspluscom-tutorial}. Źródła te mają
+charakter ogólny i~nieznacznie wykraczają poza styl ACM-ICPC, ale są godne
+polecenia ze względu na czytelną strukturę oraz niewielką długość.
+
+\subsection{Podręczniki języka programowania}
+
+Wskazanie obszernych źródeł książkowych do nauki języka programowania jest
+zadaniem jeszcze trudniejszym. Jedną z możliwości jest rozpoczęcie nauki
+programowania nie od języka \texttt{C++}, lecz od klasycznego \texttt{C} --
+jest to dobra droga do uzyskania szerszego spojrzenia na temat oraz pod wieloma
+względami optymalna kolejność poznawania tych języków. W tym celu można
+śmiało korzystać z kanonu literatury jakim jest \mycite{kernighan1988}.
+
+W przypadku samego języka \texttt{C++} analogicznym ,,kanonem'' literatury
+jest \mycite{stroustrup2000}. Pozycję tę w~istocie polecam raczej teoretykom
+języka, niż osobom zainteresowanym zaledwie umiejętnością posługiwania się
+pewnym jego podzbiorem. Z całą pewnością pozycja ta nie jest kierowana do
+czytelników, którzy wcześniej nie potrafili programować w~żadnym języku
+imperatywnym.
+
+Pozycją dalece bardziej przystępną jest \mycite{prata2004}. Jest to bardzo dobry
+kompromis między pedantyczną starannością a przystępnym sposobem, w jaki opisany
+został cały język \texttt{C++}.
+
+Przykładem książki szczególnie wartościowej dla studentów Politechniki ze
+względu na charakter zawartych w niej przykładów, a jednocześnie -- starannie
+wprowadzającej we wszystkie elementy języka \texttt{C++} jest
+\mycite{nyhoff2012}.
+
+\subsection{Podręczna dokumentacja języka}
+
+Referencje języka to materiały mające na celu nie tyle uczenie się nieznanych
+elementów języka, co szybki dostęp do formalnego opisu znanych elementów
+(nie oczekujemy wszakże, aby programista zawsze wszystko umiał na pamięć
+-- programista powinien być twórczy, a brak zdolności odtwórczych nie musi
+być wielką przeszkodą).
+
+Znaczną formalną elegancją cechuje się referencja \mycite{cppreference}. Wiąże
+się to jednak z pewnymi praktycznymi wadami -- referencja ta jest napisana
+bardzo technicznym, suchym językiem i o ile ułatwia przypominanie sobie zasady
+działania dowolnego elementu języka, to praktycznie uniemożliwia zrozumienie
+jej od podstaw. Można przypuszczać, że taka forma jest niewygodna dla
+programistów nie mających jeszcze wielkiego doświadczenia.
+
+Dokumentacją sugerowaną dla początkujących programistów jest zatem
+\mycite{cpluspluscom-reference}. Zapisana tam referencja języka \texttt{C++}
+opatrzona jest zrozumiałym komentarzem i czytelnymi przykładami, które
+skutecznie pobudzają wyobraźnię na temat tego, jak użyć każdego z omawianych
+elementów języka.
+
+\subsection{Podstawy teoretyczne}
+
+W istocie przydatne podstawy teoretyczne mogłyby objąć lwią część programów
+studiów na kierunkach matematyka i informatyka. Ta część skryptu będzie zatem
+traktowała tylko o pozycjach najważniejszych, bądź wyróżniających się z~innego
+powodu.
+
+Temat potrzebnych podstaw matematycznych można w znacznej części sprowadzić do
+zagadnień opisanych w \mycite{graham1994}.
+
+Rozmowy na temat teorii grafów w języku polskim warto prowadzić posługując się
+terminologią ze skryptu \mycite{filipczak2012}. Tłumacze najbardziej znanych
+pozycji z dziedziny teorii grafów nie wypracowali języka, który byłby do końca
+konsekwentny -- zaproponowany skrypt, poza wartościowym meritum, zawiera bardzo
+rozsądne propozycje ujednolicenia polskich tłumaczeń wielu pojęć.
+
+Wreszcie, jeśli chodzi o samą algorytmikę, warto przynajmniej raz w życiu
+przeczytać \mycite{cormen2001} i wracać do tej pozycji przy każdej potrzebie.
+Obszerność tej pozycji nie umniejsza temu, że jest ona obowiązkowa.
+
+Przykładem bardziej przystępnej, pomocniczej pozycji traktującej o podstawach
+algorytmiki jest \mycite{sedgewick1998}.
+
+\subsection{Techniki programowania}
+
+Pozycją traktującą o tym, jak programować dobrze jest przede wszystkim
+\mycite{knuth1998} wraz z wciąć powstającymi dalszymi tomami.
+
+Książką dotyczącą programowania na zawodach typu ACM-ICPC jest
+\mycite{stanczyk2009}. Pewne sugestie na temat intensywnego zastosowania
+preprocesora zapisane w tej książce polecam jednak traktować jako ciekawostkę
+-- przepisywanie znacznej części języka w celu zaoszczędzenia kilku wpisywanych
+znaków, które jednocześnie sprawia, że kod staje się niezrozumiały dla każdego
+poza znającym konkretne makra autorem zdaje się być nieoptymalne.
+
+\subsection{Zbiory zadań}
+
+Klasycznym źródłem zbiorów zadań z omówieniami są związane z Olimpiadami
+Informatycznymi ,,niebieskie książeczki'', czyli \mycite{oibook}.
+
+Pozycjami -- o ile to możliwe -- jeszcze bardziej interesującymi są polskie
+zbiory zadań, które w znacznej części traktują o zadaniach z zawodów
+akademickich, czyli \mycite{diks2012} i \mycite{diks2015}.
+
+\subsection{Tło kulturowe}
+
+Znajomość materiałów takich jak \mycite{userfriendly}, \mycite{smbc},
+\mycite{abstrusegoose} i~\mycite{xkcd} to absolutna podstawa i~nie wymaga 
+dalszego komentarza.
+
+W jednym ze źródeł wspomnianych powyżej można znaleźć odpowiedź na pytanie,
+jak po upływie krótkiego czasu od rozpoczęcia nauki poznać język \texttt{C++}
+\cite{abstrusegoose249} -- zaproponowane rozwiązanie jest znacznie
+skuteczniejsze niż jakakolwiek propozycja bibliograficzna, nie wyłączając
+niniejszego skryptu.
+
+Ciekawym połączeniem meritum i humoru jest \mycite{green2000} -- pozycja,
+która poza zapewnieniem dożywotniej pensji na stanowisku programisty w istocie
+porusza wiele merytorycznych aspektów pisania czytelnego kodu oraz składni
+języków programowania obiektowego, w tym \texttt{C++}.
+
+% ------------------------------------------------------------------------------
+\section{Weryfikacja osiągnięć}
+
+Poznawanie tajników algorytmiki i programowania można rozpatrywać jako sztukę
+dla sztuki. Jednak efekty nauki są bardziej mierzalne, jeśli znajdują one
+odzwierciedlenie w rozwiązywanych problemach. Rozwiązywanie zadań w ramach
+systemów typu online-judge jest ponadto źródłem pewnej satysfakcji, gdyż
+w większości z nich dostępne są publiczne rankingi, w ramach których można
+obserwować swoje postępy na tle pozostałych uczestników serwisu. Źródłem
+znacznie większej satysfakcji jest jednak rozwiązywanie zadań w ramach
+zawodów w programowaniu. Ta część skryptu traktuje o tym, gdzie można takie
+zadania napotkać.
+
+%TODO Do każdego serwisu i każdych zawodów dodać notę bibliograficzną z linkiem
+%TODO niech Wojtek lub Olek napiszą o TopCoderze
+\subsection{Ogólnodostępne systemy typu online-judge}
+
+\subsubsection{SPOJ.com}
+
+\subsubsection{Polski SPOJ}
+
+\subsubsection{MAIN}
+
+\subsubsection{Adjule}
+
+\subsubsection{Codeforces}
+
+\subsubsection{CodeChef}
+
+\subsubsection{UVa Online Judge}
+
+\subsubsection{HackerRank}
+
+\subsubsection{CodinGame}
+
+\subsubsection{CodeFights}
+
+
+\subsection{Zawody w programowaniu}
+
+\subsubsection{AMPPZ}
+
+\subsubsection{MWPZ}
+
+\subsubsection{PTwPZ}
+
+\subsubsection{Deadline24}
+
+\subsubsection{Marathon24}
+
+\subsubsection{Potyczki Algorytmiczne}
+
+\subsubsection{Google Code Jam}
+
+\subsubsection{Facebook Hacker Cup}
+
+\subsubsection{Rundy na Codeforces}
+
+\subsubsection{CodeChef: wyzwania i Snackdown}
+
+\subsubsection{Konkursy na CodinGame}
+
+\subsubsection{Maratony na CodeFights}
+

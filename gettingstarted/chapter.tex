@@ -1,0 +1,335 @@
+% ------------------------------------------------------------------------------
+\chapter{Jak zacząć}
+
+% ------------------------------------------------------------------------------
+\section{Czy i dlaczego \texttt{C++}?}\label{sec:whycpp}
+
+\subsection{Wymagania co do języka programowania}\label{subsec:whatdoweneed}
+Zadania z algorytmiki naśladujące swoim stylem mistrzostwa świata
+w programowaniu ACM-ICPC polegają najczęściej na tym, aby napisać program,
+który wczyta pewne dane testowe ze standardowego wejścia, wypisze odpowiadającą
+im odpowiedź na standardowe wyjście, a ponadto zrobi to w odpowiednio krótkim
+czasie i zmieści się w ograniczeniach związanych z pamięcią. Dodatkowe założenie
+dotyczy tego, że kod programu należy zawrzeć w jednym pliku oraz że program nie
+powinien korzystać z żadnych bibliotek spoza samego standardu języka. Czas
+zawodów jest zwykle ograniczony, więc warto, aby jak najwięcej rzeczy dało się
+napisać szybko. W tej części skryptu zajmiemy się intuicyjną analizą tego, jakie
+języki programowania mogą się do tego nadawać. Dodatkowym ograniczeniem
+pozostaje dostępność poszczególnych języków na zawodach w programowaniu,
+związana między innymi z ich popularnością.
+
+\subsection{Najczęściej dostępne języki}
+Tradycyjnie na zawodach programistycznych dostępne były języki \texttt{Pascal},
+\texttt{C} oraz \texttt{C++}. Są to języki kompilowane, co oznacza, że kod
+programu przekształcany jest do postaci interpretowanej bezpośrednio przez
+procesor, co oznacza brak dodatkowych narzutów i potencjalnie pełne
+wykorzystanie możliwości komputera do szybkich obliczeń. Ponadto języki te są
+niezależne od platformy -- dla każdego z nich istnieje wiele kompilatorów,
+które pozwalają na uruchamiania programów napisanych w tych językach na różnych
+urządzeniach i systemach operacyjnych.
+
+Język \texttt{C++} stopniowo zdobył jednak
+popularność tak zdecydowaną, że wybór \texttt{C} lub \texttt{Pascala} bywa
+postrzegany jako ezoteryczny i omawiany przez organizatorów jako ciekawostka
+(zdarza się to na Mistrzostwach Wielkopolski w~Programowaniu Zespołowym).
+Przyczyn tego faktu najłatwiej doszukać się w tym, że biblioteka standardowa
+języka \texttt{C++} zawiera wiele gotowych elementów, pozwalających zapisać
+rozwiązanie w zwięzły, abstrakcyjny sposób, z wykorzystaniem pewnych klasycznych
+i uniwersalnych algorytmów i struktur danych.
+Dotyczy to przede wszystkim struktur danych związanych z szablonami (ta część
+standardu języka bywa określana jako STL -- ang. \emph{Standard Template
+Library}) oraz funkcji z nagłówka \texttt{algorithm}. Nie bez znaczenia
+pozostają jednak dostępne w \texttt{C++} mechanizmy programowania obiektowego.
+Pozwala to przygotować sobie gotowe rozwiązania specyficznych problemów w taki
+sposób, aby cechowały się one zwięzłą implementacją, czytelnym API i łatwością
+zastosowania. Jakkolwiek języki z dłuższą historią, jakimi są \texttt{Pascal}
+i \textsc{C} pozwalają napisać wszystko to co jest obecne w~\texttt{C++} tak,
+aby działało równie dobrze, to w~przypadku wielu zadań algorytmicznych byłoby
+to istotnie bardziej pracochłonne.
+
+\subsection{Java}
+Na niektórych zawodach (dotyczy to na przykład Potyczek Algorytmicznych)
+dopuszczalnym językiem programowania jest także \texttt{Java}. Wybór tego języka
+wiąże się z~dostępem do bardzo szerokiej biblioteki języka, gdzie faktycznie
+dostępny od ręki jest bardzo bogaty wybór gotowych implementacji algorytmów
+i struktur danych. Korzystanie z tych elementów jest o tyle proste, że API jest
+bardzo dobrze przemyślane i udokumentowane. Optymalne posługiwanie się językiem
+o~tak obszernej specyfikacji wymaga niestety dużego nakładu pracy związanego
+z poznawaniem języka.
+\texttt{Java} nie jest jednak językiem stosownym do zadań w stylu ACM-ICPC.
+Nawet samo pisanie całego programu w jednym pliku nie jest zgodne z ogólnie
+przyjętymi technikami programowania w języku \texttt{Java}.
+Ponadto, nawet jeśli tworzenie kodu miałoby się sprowadzić do umiejętnego
+połączenia gotowych elementów w~całość, to trudno jednak powiedzieć aby
+\texttt{Java} była językiem, w~którym programy tworzy się najszybciej -- jest
+tak chociażby dlatego, że składnia \texttt{C++} jest bardziej zwięzła nawet na
+poziomie długości nazw słów kluczowych elementów biblioteki standardowej.
+Także obiektowość \texttt{Javy}, jakkolwiek dobrze dostosowana do tworzenia
+w niej dużych projektów, nie ułatwia pisania zwięzłych programów -- jedną
+z kluczowych pod tym względem różnic w stosunku do \texttt{C++} jest brak
+możliwości przeciążania operatorów. Ostateczna wada \texttt{Javy}
+wiąże się jednak z czasami wykonania programów interpretowanych w ramach
+maszyny wirtualnej -- jest to wada na tyle poważna, że w~niektórych edycjach
+Potyczek Algorytmicznych limit czasu dla \texttt{Javy} był dwu- lub trzykrotnie
+większy, niż w przypadku języków kompilowanych. W obliczu tych spostrzeżeń nie
+sposób proponować \texttt{Javę} jako język, którego poznanie byłoby przydatne
+akurat w kontekście zawodów w stylu ACM-ICPC.
+
+\subsection{Języki skryptowe}
+Oddzielne rozważania można poświęcić zawodom w stylu Google Code Jam lub
+eliminacji do Deadline24/Marathon24. Są to zawody zdalne gdzie programy w czasie
+zawodów nie są kompilowane ani uruchamiane przez organizatorów, lecz to
+uczestnik ma pewien niedługi czas od pobrania zestawu danych do przesłania
+odpowiedzi. Wiąże się z tym limit czasu wynoszący po kilka minut, zamiast
+kilku sekund typowych dla ACM-ICPC. Oznacza to, że kosztem dłuższego czasu
+wykonania programów można wybrać język, w którym napisanie samego rozwiązania
+może być przebiegać szybciej (także ze względu na zwięzłość składni) niż
+w~przypadku \texttt{C++}. Takie zalety ma wiele języków skryptowych -- wielu
+programistów jako przykład języka mającego taką zaletę wskazałoby
+\texttt{Pythona}. Można przypuszczać, że w zależności do preferencji programisty
+nie gorzej sprawdziłyby się \texttt{Perl} i \texttt{Ruby}. Zależnie od zadania
+nawet wtedy zdarza się jednak, że \texttt{C++} jest wyborem optymalnym. Dlatego
+wybór pierwszego języka, który pozwoli na sprawdzanie i rozwijanie swoich
+zdolności algorytmicznych w ramach możliwie wielu zawodów zdaje się być
+jednoznaczny -- i jest to właśnie \texttt{C++}. Poznanie innych języków może
+czasem pomóc, ale jest to sprawa drugorzędna którą można uzupełnić dopiero
+na dalszym etapie nauki.
+
+\subsection{Wersje \texttt{C++}}
+
+Osobne rozważania można poświęcić stosowanej wersji języka \texttt{C++}.
+Porównując języki pod względem szybkości wykonania pewnych instrukcji
+(ze względu mechanizmy pozwalające unikać kopiowania danych w pamięci)
+oraz zwięzłości kodu (więcej gotowych elementów ułatwiających abstrakcyjne
+programowanie obiektowe) można by dojść do wniosku, że nowoczesne wersje
+standardu języka (począwszy od \texttt{C++11}, wraz z bieżącym \texttt{C++14})
+są jednoznacznie lepsze.
+Problem dostępności tych wersji języka w systemach testujących rozwiązania
+na różnych zawodach jest aktywnie rozwiązywany, lecz wciąż można go napotkać.
+\texttt{C++11} jest jednak językiem bardzo szerokim, którego poprawne używanie
+wymaga posiadania znacznie większej wiedzy, niż w przypadku standardów języka
+do \texttt{C++03} włącznie. Korzyści związane z \texttt{C++11} istnieją, ale
+nie są aż tak istotne, aby poświęcać samemu językowi programowania aż tyle uwagi
+od samego początku nauki programowania -- jest to coś, co można uzupełni
+później. Kolejność zdobywania wiedzy zakładająca zaczęcie od \texttt{C++03}
+pozwala lepiej zrozumieć także \texttt{C++11}, gdzie występuje wiele skróconych
+zapisów, które można by stosować bez świadomości, co kryje się pod spodem. Taki
+brak zrozumienia praktycznie uniemożliwiłby szacowanie złożoności obliczeniowej
+w oparciu o kod źródłowy programu. Dlatego zalecanym w tym skrypcie językiem
+programowania jest \texttt{C++03}, zdefiniowany w standardzie
+\texttt{ISO/IEC 14882:2003}. Wspominane będą także rozszerzenia specyficzna dla
+kompilatora z~kolekcji GNU (ang. \emph{GNU Compiler Collection}).
+
+Warto jednak zauważyć, że rozumowanie bardzo podobne do tego, które zdecydowało
+o wskazaniu \texttt{C++03} zamiast nowszych wersji języka mogłoby równie dobrze
+dotyczyć wyboru \texttt{C} zamiast \texttt{C++} (i kilka lat temu często
+dokonywano takiego właśnie wyboru). Rozpoczęcie nauki od \texttt{C} jest
+ponadczasowo dobrym pomysłem dla programisty szukającego bardzo głębokiego
+spojrzenia na programowanie w wielu różnych zastosowaniach. W przypadku samych
+zadań algorytmicznych byłoby to jednak przesadne, gdyż rozwiązanie wielu z nich
+wymagałoby samodzielnego pisania w \texttt{C} tych samych klasycznych elementów,
+które w \texttt{C++} stanowią element biblioteki standardowej.
+
+
+\section{Podstawowe narzędzia}
+% g++, vim/pluma/kate, geany?
+% makefile?
+% własny skrypt do kompilacji?
+
+\subsection{Kompilator}
+
+Dla uproszczenia przyjmiemy, że zadanie polegające na tym, aby na podstawie
+pliku z kodem źródłowym (w języku \texttt{C++}) stworzyć plik wykonywalny
+stanowi kompilację. W istocie istotnym elementem tworzenia plików wykonywalnych
+jest także linkowanie (budowanie powiązań z bibliotekami, których funkcje
+zostały wywołane w ramach skompilowanego obiektu) -- jednak ze względu na brak
+wykorzystania jakichkolwiek nagłówków i bibliotek spoza biblioteki standardowej
+języka \texttt{C++}, przebieg tego etapu nie podlega dodatkowej parametryzacji
+-- w istocie myślenie o~nim nie jest przy naszych założeniach istotne.
+
+Przykładowym zestawem narzędzi pozwalający na kompilację programów (miedzy
+innymi w języku \texttt{C++}), który jest stosowany podczas wielu zawodów
+i dostępny w wielu serwisach typu online-judge jest zestaw narzędzi GNU
+(rozwijany na licencjach GNU GPL, w ramach działania fundacji GNU). Do tego
+zestawu narzędzi zalicza się kolekcja kompilatorów GNU (GCC - ang. \emph{GNU
+Compiler Collection}), wraz z kompilatorem języka \texttt{C++} dostępnym poprzez
+polecenie \texttt{g++}. W wielu dystrybucjach GNU/Linuksa aby z niego korzystać
+trzeba po prostu zainstalować pakiet o nazwie \texttt{g++}.
+
+Kod źródłowy w języku \texttt{C++} jest po prostu plikiem tekstowym. Tradycyjnie
+przyjmuje się, że nazwa pliku powinna posiadać jeden z sufiksów: \texttt{.cc},
+\texttt{.cpp}, \texttt{.cp}, \texttt{.cxx} lub \texttt{.c++}. Przyjmijmy, że
+plik \texttt{hello.cc} znajdujący się w bieżącym katalogu ma następującą
+treść:
+\begin{lstlisting}[language=C++, caption={Najprostszy program -- \texttt{hello.cc}.}]
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main() {
+	cout << "Hello world!\n";
+	return 0;
+}
+\end{lstlisting}
+
+Najprostsze wywołanie kompilatora miałoby postać:
+\begin{Verbatim}[fontsize=\footnotesize]
+$ g++ hello.cc
+\end{Verbatim}
+
+Wykonanie takiego polecenia spowodowałoby powstanie pliku wykonywalnego
+o~standardowej nazwie \texttt{a.out}. W tej chwili można na przykład odczytać
+informacje o tym pliku a także uruchomić go.
+\begin{Verbatim}[fontsize=\footnotesize]
+$ file a.out
+a.out: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked,
+interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32,
+BuildID[sha1]=53d645b85db56fb7f1f4e2ec78c6dc9b9b260b80, not stripped
+$ ./a.out
+Hello world!
+\end{Verbatim}
+
+Aby zamiast zawsze kompilować program do standardowej nazwy \texttt{a.out} (lub,
+w przypadku systemów Microsoft Windows -- \texttt{a.exe}) podać własną nazwę,
+należy zastosować parametr \texttt{-o} (wielkość liter ma znaczenie) podając
+po nim oczekiwaną nazwę pliku binarnego. Na przykład:
+\begin{Verbatim}[fontsize=\footnotesize]
+$ g++ hello.cc -o hello
+\end{Verbatim}
+
+Skompiluje program do pliku binarnego o nazwie \texttt{hello}.
+
+Inne opcje kompilatora warte uwagi w kontekście niniejszego skryptu to:
+\begin{itemize}
+\item \texttt{-std=} -- wersja standardu języka. Adekwatnie do wyjaśnień
+z sekcji \ref{sec:whycpp}, interesującymi nas wariantami są przede wszystkim
+\texttt{-std=c++03} lub, jeśli wiemy co robimy i mamy pewność że nowszy standard
+jest obsługiwany tam, gdzie wysyłamy rozwiązania: \texttt{-std=c++14}.
+
+\item \texttt{-O} -- poziom/rodzaj optymalizacji. Na przykład \texttt{-O0}
+oznacza brak optymalizacji, co sprawia że kompilacja trwa bardzo krótko,
+lecz wynikowy program może działać wolno. Z kolei \texttt{-O3} sprawia, że nawet
+programy napisane niechlujnie (nadmiar rekurencji, redundantne kopiowanie
+pamięci) mogą działać szybko -- lecz w przypadku \texttt{-O3} nawet drobne
+niedoskonałości kodu mogą prowadzić do poważnych błędów w działaniu programu.
+Na zawodach programistycznych najczęściej stosowane jest \texttt{-O2} i taką
+opcję warto stosować także podczas lokalnych testów.
+
+Oddzielnym przypadkiem jest kompilowanie programu nie po to, aby badać jego
+szybkość działania, lecz aby szukać błędów występujących podczas jego przebiegu
+(czyli stosować \emph{debugger}, na przykład \texttt{gdb} opisany w sekcji
+\ref{subsec:gdb}). Wtedy właściwą opcją jest \texttt{-Og}.
+
+\item \texttt{-g} -- opcja, którą należy włączyć jeżeli kompilujemy program na
+potrzeby \emph{debuggera}. W przypadku systemów GNU/Linux i debuggera
+\texttt{gdb} stosowny zestaw pokrewnych opcji to
+\texttt{-gdwarf-4 -g3 -ggdb3 -Og} -- wtedy w plik wykonywalny zostanie
+wbudowanych dużo dodatkowych informacji, które mogą ułatwić szukanie przyczyn
+błędów występujących podczas wykonywania programu.
+
+\item \texttt{-static} -- powoduje, że wszystkie wykorzystywane biblioteki
+zostają wbudowane w plik wykonywalny programu. W rezultacie taki plik jest
+większy (zajmuje kilka dodatkowych megabajtów), ale dzięki temu pomiar czasu
+działania programu staje się bardziej deterministyczny,gdyż wywoływanie funkcji
+bibliotecznych nigdy nie wymaga od systemu operacyjnego czytania oddzielnych
+plików z bibliotekami współdzielonymi.
+
+Opcji \texttt{-static} nie należy jednak stosować podczas szukania błędów
+podczas wykonania programu. Nie chcemy, aby informacje o potencjalnych
+zagrożeniach wynikających z badanego kodu zostały zgubione między znaczną
+liczbą ostrzeżeń dotyczących kodu biblioteki standardowej (jakkolwiek została
+ona dobrze przetestowana i raczej nie zawiera błędów, to jej kod może generować
+ostrzeżenia).
+
+\item \texttt{-m32} -- jeśli używamy komputera o architekturze x86-64
+(najpopularniejszej 64-bitowej) a chcemy zbudować program pod 32-bitową
+architekturę x86, to możemy to osiągnąć dzięki tej opcji. Wymaga to
+zainstalowania dostosowanej do tego zadania wersji kompilatora -- w systemach
+Ubuntu i Debian jest ona zawarta w pakiecie \texttt{g++-multilib}. Ma to sens,
+jeśli system testujący jest 32-bitowy i chcemy odzwierciedlić te same warunki
+u siebie -- różnice między architekturą 64- i 32-bitową dotyczą zarówno czasów
+wykonania (przeważnie na korzyść architektury 64-bitowej) jak i zużycia pamięci
+(na korzyść architektury 32-bitowej, ale zazwyczaj nieznacznie -- jest tak
+dlatego, że rodzaj architektury dotyczy dokładnie tego, ile bitów pamięci
+zajmuje pojedyncza zmienna typu wskaźnikowego).
+
+\item \texttt{-march=}, \texttt{-mtune=} -- opcje dotyczące dostosowania
+programu pod konkretny rodzaj procesorów. Jeżeli chcemy osiągnąć jak najlepszy
+czas na bieżącym komputerze, wystarczającym pomysłem zapewne jest użycie
+opcji \texttt{-march=native}. Aby uzyskać program dostosowany pod wiele różnych
+procesorów, gotowy do rozprzestrzenienia na inne komputery (lub: dokonać
+pomiaru czasu działania programu, który będzie nieco mniej zaburzony przez
+specyficzne parametry bieżącego sprzętu) można użyć opcji
+\texttt{-march=x86-64 -mtune=generic} (lub, w przypadku kompilacji dla
+architektury 32-bitowej, \texttt{-march=i686 -mtune=generic}).
+
+\item \texttt{-W} -- opcje, które decydują o tym jakie ostrzeżenia na temat
+domniemanej poprawności kodu programu zostaną wypisane. Ostrzeżenia są dobre --
+często ich lektura pozwala wyeliminować błędy, których wykrycie na podstawie
+samej obserwacji działania programu byłoby bardzo trudne. Dlatego włączenie
+szerokiej gamy ostrzeżeń o niezgodności ze standardem języka, zapisach
+potencjalnie niebezpiecznych i zapisach powszechnie uznanych za nieczytelne jest
+wskazane -- można to osiągnąć za pomocą opcji
+\texttt{-W -Wall -Wextra -Wpedantic}.
+
+Część ostrzeżeń charakteryzuje się jednak tym, że w przypadku zadań w stylu
+ACM-ICPC są one redundantne. Za pomocą odpowiednich opcji można je jednak
+pojedynczo powyłączać. Na przykład \texttt{-Wno-sign-compare} pozwala uniknąć
+ostrzeżenia o porównaniu zmiennej całkowitoliczbowej ze znakiem ze zmienną bez
+znaku (dotyczy to także porównywania zmiennych typu \texttt{int} z~wartościami
+zwracanymi przez metodę \texttt{.size()} standardowych kontenerów).
+Natomiast \texttt{-Wno-char-subscripts} pozwala swobodnie używać typu
+\texttt{char} jako indeksu tablicy (zabieg ten częściej stosuje się celowo, niż
+przypadkiem).
+
+\item \texttt{-D} -- opcje powodujące, że zdefiniowane zostają dodatkowe
+dyrektywy preprocesora. Opcja \texttt{-DARBITRARY\_NAME} sprawia, że program
+jest kompilowany tak, jakby przed jego kodem dodatkowo pojawiła się linia treści
+\texttt{\#define ARBITRARY\_NAME}. Z kolei opcje typu
+\texttt{-DANOTHER\_NAME=VALUE} działają tak, jakby na początku kodu dodano
+\texttt{\#define ANOTHER\_NAME VALUE}.
+\end{itemize}
+
+Podsumowując powyższe, kompilacja programu z myślą o szukaniu błędów w~trakcie
+jego wykonania może przebiegać następująco:
+\begin{Verbatim}[fontsize=\footnotesize]
+$ g++ -std=c++03 -gdwarf-4 -g3 -ggdb3 -march=x86-64 -mtune=generic -pipe -W \
+-Wall -Wextra -Wpedantic -Wno-sign-compare -Wno-char-subscripts -Og \
+-DLOCAL_TESTS hello.cc -o hello
+\end{Verbatim}
+
+Natomiast do kompilacji wykonywanej z myślą o pomiarze czasu stosownym
+poleceniem byłoby:
+\begin{Verbatim}[fontsize=\footnotesize]
+$ g++ -std=c++03 -march=x86-64 -mtune=generic -pipe -W -Wall -Wextra \
+-Wpedantic -Wno-sign-compare -Wno-char-subscripts -O2 -static hello.cc -o hello
+\end{Verbatim}
+
+Opcja \texttt{-DLOCAL\_TESTS} może zostać zastąpiona dowolną inną nazwą, która
+nie wywoła konfliktów ze standardem języka \texttt{C++}. Zastosowanie takiej
+opcji pozwoli na pisanie kodu, który się będzie zachowywał podczas lokalnych
+testów inaczej, niż po wysłaniu do systemu testującego. Istnieją przypadki,
+w których takie zachowanie jest pożądane (w istocie zaproponowany zostanie
+szablon kodu, który będzie zakładał wykorzystanie tego mechanizmu w każdym
+pisanym programie).
+
+W dalszej części skryptu omówione zostanie opakowanie wszystkich tych opcji
+w gotowy skrypt -- pozwala to uniknąć patrzenia na te opcje na ekranie przy
+każdej kompilacji programu, oraz o żadnej z nich nie zapominać.
+
+\section{Wskazówki dla skazanych na Microsoft Windows}
+% mingw/cygwin + porządek w %PATH%, Notepad++
+% "Open terminal here"
+
+\section{Narzędzia pomocnicze}
+
+\subsection{Lokalne testowanie programu}
+% diff, wdiff, time
+% pamięć(?)
+
+\subsection{\texttt{gdb}}\label{subsec:gdb}
+
+\subsection{\texttt{Valgrind}}
+
+\subsection{\texttt{Code::Blocks}}

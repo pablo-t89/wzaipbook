@@ -1,0 +1,110 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[a4paper]{geometry}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage[plmath]{polski}
+\usepackage[polish]{babel}
+
+\usepackage{icomma}
+\usepackage{indentfirst}
+
+\frenchspacing
+\sloppy
+
+\usepackage{datetime}
+\usepackage{mathtools,bbm,amsthm,amsbsy}
+
+\usepackage{longtable,multirow}
+
+\usepackage{color,xcolor}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\definecolor{lstcomment}{rgb}{0.00, 0.00, 1.00}
+\definecolor{lstpreprocessor}{rgb}{0.65, 0.15, 0.95}
+\definecolor{lstvalue}{rgb}{1.00, 0.00, 1.00}
+\definecolor{lstkeyword}{rgb}{0.65, 0.15, 0.15}
+\definecolor{lstlinenumbers}{rgb}{0.40, 0.40, 0.40}
+\definecolor{lsttypes}{rgb}{0.20, 0.55, 0.35}
+\lstset{
+  	language=C++,
+	backgroundcolor=\color{white},
+	basicstyle=\bfseries\scriptsize,
+	breaklines=true,
+	captionpos=t,
+	commentstyle=\color{lstcomment},
+	deletekeywords={...},
+	escapeinside={\%*}{*)},
+	extendedchars=true,
+	frame=single,
+	keepspaces=true,
+	keywordstyle=\color{lstkeyword},
+	otherkeywords={*,...},
+	directivestyle=\color{lstpreprocessor},
+	emph={int,char,double,float,unsigned},
+   	emphstyle=\color{lsttypes},
+	numbers=left,
+	numbersep=5pt,
+	numberstyle=\color{lstlinenumbers},
+	rulecolor=\color{black},
+	showspaces=false,
+	showstringspaces=true,
+	showtabs=false,
+	stepnumber=1,
+	stringstyle=\color{lstvalue},
+	tabsize=2,
+	title=\lstname
+}
+
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+
+\usepackage{hyperref,url}
+\hypersetup{
+    pdffitwindow=false,
+    pdfstartview={FitH},
+    pdftitle={Skrypt wprowadzający do WZAiPów},
+    pdfauthor={Paweł Tarasiuk},
+    pdfsubject={Programowanie w języku C++},
+    pdfcreator={Paweł Tarasiuk},
+    pdfproducer={Paweł Tarasiuk},
+    pdfkeywords={c++} {programming} {algorithms} {acm icpc},
+    pdfnewwindow=true,
+    pdfborder={0 0 0},
+    colorlinks=true,
+    linkcolor={blue!75!black},
+    citecolor={blue!75!black},
+    urlcolor={blue!75!black},
+    unicode=true
+}
+
+\usepackage{bibentry}
+\nobibliography*
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\lhead{Skrypt wprowadzający do WZAiPów}
+\rhead{\thepage{} / {\hypersetup{linkcolor=black}\pageref{LastPage}}}
+
+\makeatletter
+\newcommand*{\declarecommand}{%
+  \@star@or@long\declare@command
+}
+\newcommand*{\declare@command}[1]{%
+  \provide@command{#1}{}%
+  \renew@command{#1}%
+}
+\makeatother
+
+\declarecommand{\mycite}[1]{\emph{\bibentry{#1}}\,\cite{#1}} 
+
+\title{Wprowadzenie do Sekcji Algorytmicznej, zawodów w programowaniu i WZAiPów}
+%\title{Skrypt wprowadzający do Wybranych Zagadnień Algorytmiki i Programowania}
+%\author{Sekcja Algorytmiczna Koła Informatycznego Niepokoju ,,KINo''\\[12pt]Pod redakcją opiekuna tematycznego mgr inż. Pawła Tarasiuka\\Instytut Informatyki PŁ}
+\author{Paweł Tarasiuk, Instytut Informatyki PŁ\\Sekcja Algorytmiczna Koła Informatycznego Niepokoju ,,KINo''}
+\date{Łódź \the\year}
